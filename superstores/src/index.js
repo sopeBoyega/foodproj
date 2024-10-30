@@ -11,6 +11,7 @@ root.render(
    {/* Context is a way to share or p
     ass data across components without having to manually pass props down at every level  */}
     {/* Here I use StoreContextProvider meaning the children components would have access to the contextValue that was passed */}
+    
     <StoreContextProvider>
       <App />
     </StoreContextProvider>

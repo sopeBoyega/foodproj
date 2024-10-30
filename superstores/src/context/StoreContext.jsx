@@ -55,7 +55,7 @@ const getTotalCartAmount = () =>{
         const response = await axios.get(url+"/api/food/list")
        
         setFoodlist(response.data.data)
-        console.log(response.data.data)
+ 
     }
 
     const loadCartData = async (token) => {
@@ -73,14 +73,12 @@ const getTotalCartAmount = () =>{
             
             async function loadData(params) {
                await fetchFoodList()
-                console.log(food_list)
                 if (localStorage.getItem("token")) {
                     setToken(localStorage.getItem("token"))
                 }
                 await loadCartData(localStorage.getItem("token"))
             }
             loadData();
-            console.log("Hello")
         }
     ,[])
 

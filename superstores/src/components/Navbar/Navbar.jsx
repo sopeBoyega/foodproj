@@ -59,7 +59,6 @@ const Navbar = ({ setShowLogin }) => {
           </Link>
           <div className={!getTotalCartAmount() ? "" : "dot"}> </div>
         </div>
-        {console.log(token)}
         {/* Something was wrong with my context value called token which keeps
         clearing upon every refresh so I decided to check the local Storage directlt
         An error to reslove later. */}

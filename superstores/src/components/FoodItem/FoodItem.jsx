@@ -7,7 +7,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
   // Received a problem here a while ago which was difficult it said something was 
   // undefined in my code I found out that in the Context API I hadnt exported my image variable
   const { cartItems, addToCart, removeFromCart,url } = useContext(StoreContext);
-  console.log(cartItems[id])
+
   return (
     <div className="food-item">
       <div className="food-item-image-container">

@@ -11,17 +11,24 @@ const StoreContextProvider = (props) => {
  const [food_list,setFoodlist] = useState([])
 //This addToCart function below checks if an item does not exist in the cart using the itemId
 // 
+
  const addToCart = async (itemId) => {
-    if (!cartItems[itemId]) {
+    const itemInCart = cartItems && cartItems[itemId];
+    if (!itemInCart) {
         setCartItems((prev)=>({...prev,[itemId]:1}))
     }
     else {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     }
     // When the product is added in the cart in would be updated in the usert cartData in datbase also
-if (token) {
-    await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
-}
+    try {
+        if (token) {
+            await axios.post(url + "/api/cart/add", { itemId }, { headers: { token } });
+        }
+    } catch (error) {
+        console.error("Failed to update cart in database:", error);
+    }
+    
  }
 
  const  removeFromCart = async (itemId) => {

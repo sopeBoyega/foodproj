@@ -72,6 +72,9 @@
     z-index: 1;
     cursor: pointer;
 }
+a{
+    cursor: pointer;
+}
 
 .navbar-profile:hover .nav-profile-dropdown{
     display: flex;

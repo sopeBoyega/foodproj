@@ -6,6 +6,7 @@
     border-top-color: tomato;
     border-radius: 50%;
     animation: rotate 1s infinite;
+    margin-top: 10px;
 }
 
 

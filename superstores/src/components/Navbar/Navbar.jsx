@@ -13,10 +13,14 @@ const Navbar = ({ setShowLogin }) => {
     setToken("");
     navigate("/");
   };
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+  
   return (
     <div className="navbar">
       <Link to="/">
-        <img src={assets.logo} className="logo" />
+        <img src={assets.logo} className="logo" alt="logo"/>
       </Link>
       <ul className="navbar-menu">
         {/* Here the Link Component for react router dom is used to shift focus to s specified comonent 
@@ -29,22 +33,25 @@ const Navbar = ({ setShowLogin }) => {
           Home{" "}
         </Link>
         <a
-          href="#explore-menu"
-          onClick={() => setMenu("menu")}
+          onClick={() => {setMenu("menu");
+            scrollToSection("explore-menu")
+          }}
           className={menu === "menu" ? "active" : " "}
         >
           Menu
         </a>
         <a
-          href="#app-download"
-          onClick={() => setMenu("mobile-app")}
+          onClick={() => {setMenu("mobile-app");
+            scrollToSection("app-download")}
+          }
           className={menu === "mobile-app" ? "active" : " "}
         >
           Mobile App
         </a>
         <a
-          href="#footer"
-          onClick={() => setMenu("contact-us")}
+          onClick={() => {setMenu("contact-us");
+            scrollToSection("footer")
+          }}
           className={menu === "contact-us" ? "active" : " "}
         >
           Contact Us

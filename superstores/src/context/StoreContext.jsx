@@ -59,10 +59,19 @@ const getTotalCartAmount = () =>{
 
 
     const fetchFoodList = async () => {
+       
+       try {
+        setLoading(true)
         const response = await axios.get(url+"/api/food/list")
        
         setFoodlist(response.data.data)
- 
+       } catch (error) {
+        console.log("Error Loading Data:", error);
+       }
+       finally {
+        setLoading(false);
+       }
+
     }
 
     const loadCartData = async (token) => {

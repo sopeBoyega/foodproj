@@ -8,13 +8,14 @@ import { StoreContext } from '../../context/StoreContext'
 
 
 const Home = () => {
-  const {food_list} = useContext(StoreContext)
+  const {loading} = useContext(StoreContext);
   const [category,setCategory] = useState("All")
+  
   return (
     <div>
-        <Header/>
+              <Header/>
         <ExploreMenu category={category}  setCategory={setCategory}/>
-       {food_list ? <FoodDisplay category = {category}/>  : <div className="spinner"></div>  } 
+       {!loading ? <FoodDisplay category = {category}/>  : <div className="spinner"></div>  } 
        <AppDownload/>
     </div>
   )

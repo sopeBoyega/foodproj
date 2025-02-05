@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoute.js"
 import "dotenv/config"
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
+import visitorRouter from "./routes/visitorRoute.js"
 
 
 // app config
@@ -27,6 +28,7 @@ app.use ("/images",express.static('uploads'))
 app.use("/api/user",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter);
+app.use("/api/visitorCount",visitorRouter);
 
 
 //Used to request data from the server

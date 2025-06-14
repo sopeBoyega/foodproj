@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
+import AutoIncrementFactory from 'mongoose-sequence';
+
+const AutoIncrement = AutoIncrementFactory(mongoose);
 
 const journalSchema = new mongoose.Schema({
   id: {
     type: Number,
-    required: true,
     unique: true,
   },
   schoolName: {
@@ -15,11 +17,11 @@ const journalSchema = new mongoose.Schema({
     required: true,
   },
   wasteReduction: {
-    type: String, // could also be Number if you want "25" to be treated as a number
+    type: String,
     required: true,
   },
   wasteAmount: {
-    type: String, // same as above
+    type: String,
     required: true,
   },
   progress: {
@@ -43,6 +45,9 @@ const journalSchema = new mongoose.Schema({
     default: [],
   },
 });
+
+// Add auto-increment plugin for 'id'
+journalSchema.plugin(AutoIncrement, { inc_field: 'id' });
 
 const journalModel = mongoose.models.journal || mongoose.model("journal",journalSchema)
 

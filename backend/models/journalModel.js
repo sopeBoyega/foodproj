@@ -26,7 +26,7 @@ const journalSchema = new mongoose.Schema({
   },
   progress: {
     type: Number,
-    required: true,
+    required: false,
   },
   actions: {
     type: String,

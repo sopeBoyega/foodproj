@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({storage:storage})
+export const upload = multer({storage:storage})
 
 
 //We use the post method to send  the data on the server 

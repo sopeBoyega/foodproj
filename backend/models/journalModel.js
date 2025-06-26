@@ -28,6 +28,10 @@ const journalSchema = new mongoose.Schema({
     type: Number,
     required: false,
   },
+  images : {
+    type : [String],
+    required :true,
+  },
   actions: {
     type: String,
     required: true,

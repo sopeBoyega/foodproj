@@ -8,6 +8,7 @@ import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 import visitorRouter from "./routes/visitorRoute.js"
 import journalRouter from "./routes/journalRoute.js"
+import blogRouter from "./routes/blogRoute.js"
 
 
 // app config
@@ -32,6 +33,7 @@ app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter);
 app.use("/api/visitorCount",visitorRouter);
 app.use("/api/journal",journalRouter);
+app.use("/api/blog",blogRouter);
 
 
 //Used to request data from the server
